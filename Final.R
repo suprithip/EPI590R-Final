@@ -11,3 +11,11 @@ tbl_summary(
 	by=Clinic,
 	include=c(Group, Age, Black, White, Nat.Am, Asian, Hisp, Education
 	))
+logistic_model<-glm(Group~Age+Education, data=opt, family = binomial())
+tbl_regression(
+	logistic_model,
+	exponentiate =TRUE,
+	label = list(
+		Age ~ "Age of Women",
+		Education ~ "Level of Education"
+	))
