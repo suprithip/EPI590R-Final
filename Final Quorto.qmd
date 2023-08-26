@@ -1,0 +1,56 @@
+---
+title: "EPI 590R Final"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+There are `r inline_text(table1, variable="Asian", level="Yes", column="NY")` people who were Asian and from the New York clinic in this study.
+
+```{r}
+#| label: tbl-one
+#| tbl-cap: "Descriptive Statistics"
+#| output-location: slide
+table1<-tbl_summary(
+	opt,
+	by=Clinic,
+	include=c(Group, Age, Black, White, Nat.Am, Asian, Hisp, Education
+	))
+table1
+```
+
+```{r}
+#| label: tbl-two
+#| tbl-cap: "Regression Statistics"
+#| output-location: slide
+table2<-logistic_model<-glm(Group~Age+Education, data=opt, family = binomial())
+tbl_regression(
+	logistic_model,
+	exponentiate =TRUE,
+	label = list(
+		Age ~ "Age of Women",
+		Education ~ "Level of Education"
+	))
+table2
+```
+
+The average age of study participants was `r round(age_avg, 1)`
+
+```{r}
+#| label: fig1
+#| boxplot-cap: "Figure 1"
+#| output-location: slide
+bp<-boxplot(opt$Age~opt$Clinic,
+				xlab="Clinic",
+				ylab="Age",
+				main="Participants Ages by Clinic")
+bp
+age_avg<-mean(opt$Age, na.rm=TRUE)
+```
