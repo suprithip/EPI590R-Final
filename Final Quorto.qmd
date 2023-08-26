@@ -12,7 +12,7 @@ Quarto enables you to weave together content and executable code into a finished
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
-There are `r inline_text(table1, variable="Asian", level="Yes", column="NY")` people who were Asian and from the New York clinic in this study.
+@tbl-one produces the Descriptive Statistics of the study group. There are `r inline_text(table1, variable="Asian", level="Yes", column="NY")` people who were Asian and from the New York clinic in this study.
 
 ```{r}
 #| label: tbl-one
@@ -41,7 +41,7 @@ tbl_regression(
 table2
 ```
 
-The average age of study participants was `r round(age_avg, 1)`
+The average age of study participants was `r round(age_avg, 1)` and the oldest particpant in this study was 44 from Minnesota, as @fig1 shows.
 
 ```{r}
 #| label: fig1
