@@ -19,3 +19,9 @@ tbl_regression(
 		Age ~ "Age of Women",
 		Education ~ "Level of Education"
 	))
+library(broom)
+glance(logistic_model, conf.int=TRUE, exponentiate=TRUE)
+boxplot(opt$Age~opt$Clinic,
+				xlab="Clinic",
+				ylab="Age",
+				main="Participants Ages by Clinic")
