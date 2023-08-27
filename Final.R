@@ -25,10 +25,12 @@ tbl_regression(
 library(broom)
 glance(logistic_model, conf.int=TRUE, exponentiate=TRUE)
 #figure
-boxplot(opt$Age~opt$Clinic,
+box<-boxplot(opt$Age~opt$Clinic,
 				xlab="Clinic",
 				ylab="Age",
 				main="Participants Ages by Clinic")
+library(ggplot2)
+ggsave(here::here("Plots","box.jpg"))
 #function: % of Those Who Received Treatment from NewYork
 city<-function(x,y,multiplier=100){
 new_val=multiplier*sum(x)/sum(y)
