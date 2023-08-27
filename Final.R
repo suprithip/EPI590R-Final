@@ -29,9 +29,11 @@ boxplot(opt$Age~opt$Clinic,
 				xlab="Clinic",
 				ylab="Age",
 				main="Participants Ages by Clinic")
-#function: Calculate Average Qualifying Teeth Among Those Who Received Treatment
+#function: % of Those Who Received Treatment from NewYork
 city<-function(x,y,multiplier=100){
 new_val=multiplier*sum(x)/sum(y)
 return(new_val)
 }
 city(opt$Clinic=="NY",opt$Group=="T")
+
+
