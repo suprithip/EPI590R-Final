@@ -2,17 +2,14 @@
 title: "EPI 590R Final"
 format: html
 editor: visual
+theme: cosmo
 ---
 
-## Quarto
+## **Obstetrics and Periodontal Therapy Data Set**
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+This study was a randomized controlled study conducted to determine if nonsurgical periodontal treatment given to women before 21 weeks gestation compared to after delivery was linked to better preterm birth and low birth weight outcomes. Participants diagnosed with maternal periodontal disease from four centers were randomly assigned to the treatment and control groups, with data being collected at visits 1, 3, and 5. This data was obtained from the medicaldata repository from user "higgi13425" (https://github.com/higgi13425/medicaldata/tree/master/data).
 
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-@tbl-one produces the Descriptive Statistics of the study group. There are `r inline_text(table1, variable="Asian", level="Yes", column="NY")` people who were Asian and from the New York clinic in this study.
+@tbl-one produces the Descriptive Statistics of the study group, stratified by the origin of the clinic participants were recruited from. There are `r inline_text(table1, variable="Asian", level="Yes", column="NY")` people who were Asian and from the New York clinic in this study.
 
 ```{r}
 #| label: tbl-one
