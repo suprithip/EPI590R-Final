@@ -39,5 +39,3 @@ new_val=multiplier*sum(x)/sum(y)
 return(new_val)
 }
 city(opt$Clinic=="NY",opt$Group=="T")
-
-
