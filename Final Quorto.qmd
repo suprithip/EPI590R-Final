@@ -42,7 +42,7 @@ table2
 
 ```{r}
 #| label: fig-1
-#| boxplot-cap: "Figure 1"
+#| fig-cap: "Boxplot showing the range of ages in each clinic"
 #| output-location: slide
 bp<-boxplot(opt$Age~opt$Clinic,
 				xlab="Clinic",
